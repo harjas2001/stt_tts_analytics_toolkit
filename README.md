@@ -6,6 +6,18 @@ Two focused tools — one for finding **what the STT model mishears**, one for a
 
 ---
 
+## Background
+
+Built solo between February and mid-March 2026 to address a gap in observability for two national telco voicebot deployments operating at enterprise call centre scale.
+
+The input dataset covered **three months of production NLP call data** across both brands — tens of thousands of sessions — giving the analysis enough volume to surface statistically meaningful mistranscription patterns rather than one-off noise.
+
+The confusion map output (`confusion_map.csv`) was used directly to action changes in **Genesys Cloud's custom dictionary management**, boosting phonetically ambiguous domain terms that the STT model was consistently mishearing. This moved the work from insight to a concrete system change — reducing no-match rates driven by transcription errors rather than genuine user intent failures.
+
+The no-match metrics tool was developed in parallel to quantify the *shape* of failures: specifically, how many no-match events were caused by short, ambiguous utterances versus longer ones where the STT model had more signal to work with.
+
+---
+
 ## Tools
 
 ### 1. STT Mistranscription Detector (`stt_mistranscription_detector/`)
