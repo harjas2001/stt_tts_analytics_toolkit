@@ -1,3 +1,6 @@
+# Domain vocabulary — private, never commit
+vocab/domain_vocab.txt
+
 # Environment
 .env
 *.env.local
